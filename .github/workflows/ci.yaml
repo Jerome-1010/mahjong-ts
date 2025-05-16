@@ -19,8 +19,14 @@ jobs:
           deno-version: v2.x
           cache: true
 
+      - name: Run Type Checker
+        run: deno check
+
       - name: Run Linter
         run: deno lint
+
+      - name: Run Formatter
+        run: deno fmt --check
 
       - name: Run Tests
         run: deno test
